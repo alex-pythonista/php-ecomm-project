@@ -7,3 +7,4 @@ Username: harry@den.com
 Password: code0
 
 DATABASE NAME "ecomm"
+Hi Mow and Team
