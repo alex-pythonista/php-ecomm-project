@@ -15,21 +15,21 @@
 		$_SESSION['lastname'] = $lastname;
 		$_SESSION['email'] = $email;
 
-		if(!isset($_SESSION['captcha'])){
-			require('recaptcha/src/autoload.php');		
-			$recaptcha = new \ReCaptcha\ReCaptcha('6LevO1IUAAAAAFCCiOHERRXjh3VrHa5oywciMKcw', new \ReCaptcha\RequestMethod\SocketPost());
-			$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+		// if(!isset($_SESSION['captcha'])){
+		// 	require('recaptcha/src/autoload.php');		
+		// 	$recaptcha = new \ReCaptcha\ReCaptcha('6LevO1IUAAAAAFCCiOHERRXjh3VrHa5oywciMKcw', new \ReCaptcha\RequestMethod\SocketPost());
+		// 	$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
-			if (!$resp->isSuccess()){
-		  		$_SESSION['error'] = 'Please answer recaptcha correctly';
-		  		header('location: signup.php');	
-		  		exit();	
-		  	}	
-		  	else{
-		  		$_SESSION['captcha'] = time() + (10*60);
-		  	}
+		// 	if (!$resp->isSuccess()){
+		//   		$_SESSION['error'] = 'Please answer recaptcha correctly';
+		//   		header('location: signup.php');	
+		//   		exit();	
+		//   	}	
+		//   	else{
+		//   		$_SESSION['captcha'] = time() + (10*60);
+		//   	}
 
-		}
+		// }
 
 		if($password != $repassword){
 			$_SESSION['error'] = 'Passwords did not match';
@@ -76,8 +76,8 @@
 				        $mail->isSMTP();                                     
 				        $mail->Host = 'smtp.gmail.com';                      
 				        $mail->SMTPAuth = true;                               
-				        $mail->Username = 'testsourcecodester@gmail.com';     
-				        $mail->Password = 'mysourcepass';                    
+				        $mail->Username = '191006712@eastdelta.edu.bd';     
+				        $mail->Password = 'Alex_007';                    
 				        $mail->SMTPOptions = array(
 				            'ssl' => array(
 				            'verify_peer' => false,
@@ -86,13 +86,13 @@
 				            )
 				        );                         
 				        $mail->SMTPSecure = 'ssl';                           
-				        $mail->Port = 465;                                   
+				        $mail->Port = 587;                                   
 
-				        $mail->setFrom('testsourcecodester@gmail.com');
+				        $mail->setFrom('191006712@eastdelta.edu.bd');
 				        
 				        //Recipients
 				        $mail->addAddress($email);              
-				        $mail->addReplyTo('testsourcecodester@gmail.com');
+				        $mail->addReplyTo('191006712@eastdelta.edu.bd');
 				       
 				        //Content
 				        $mail->isHTML(true);                                  
