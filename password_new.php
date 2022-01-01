@@ -13,7 +13,7 @@
 		$repassword = $_POST['repassword'];
 
 		if($password != $repassword){
-			$_SESSION['error'] = 'Passwords did not match';
+			$_SESSION['error'] = 'Incorrect password';
 			header('location: '.$path);
 		}
 		else{
@@ -30,7 +30,7 @@
 					$stmt = $conn->prepare("UPDATE users SET password=:password WHERE id=:id");
 					$stmt->execute(['password'=>$password, 'id'=>$row['id']]);
 
-					$_SESSION['success'] = 'Password successfully reset';
+					$_SESSION['success'] = 'Password reset successfully';
 					header('location: login.php');
 				}
 				catch(PDOException $e){
