@@ -51,7 +51,7 @@
 	    </div>
 	  </div>
   	<?php $pdo->close(); ?>
-  	<?php include 'includes/footer.php'; ?>
+  	
 </div>
 
 <?php include 'includes/scripts.php'; ?>

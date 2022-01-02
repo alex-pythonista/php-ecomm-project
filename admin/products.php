@@ -137,7 +137,6 @@
     </section>
      
   </div>
-  	<?php include 'includes/footer.php'; ?>
     <?php include 'includes/products_modal.php'; ?>
     <?php include 'includes/products_modal2.php'; ?>
 
