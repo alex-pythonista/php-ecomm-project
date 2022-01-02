@@ -1,66 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/about.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--====== NAVBAR TWO PART START ======-->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <section class="navbar-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                           
-                            <a class="navbar-brand" href="#">
-                                <img src="assets/images/logo.svg" alt="Logo">
-                            </a>
-                            
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
+    <title>About Us</title>
+  </head>
+  
+  <body>
     
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
-                                <ul class="navbar-nav m-auto">
-                                    <li class="nav-item active"><a class="page-scroll" href="#home">home</a></li>
-                                    <li class="nav-item"><a class="page-scroll" href="./login.html">Login</a></li>
-                                    <li class="nav-item"><a class="page-scroll" href="./sign up.html">Sign up</a></li>
-                                    <li class="nav-item"><a class="page-scroll" href="./about.html">About</a></li>
-                                    <li class="nav-item"><a class="page-scroll" href="./team.html">Team</a></li>
-                                    <li class="nav-item"><a class="page-scroll" href="./contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-    
-                        </nav> <!-- navbar -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </section>
-    
-        <!--====== NAVBAR TWO PART ENDS ======-->
-<section id="about" class="about-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="faq-content mt-45">
-                    <div class="about-title">
-                        <h6 class="sub-title">A Little More About Us</h6>
-                        <h4 class="title">Frequently Asked Questions <br> About Our Site</h4>
-                    </div> <!-- faq title -->
+  <div class="container p-5">
 
-</section>
+      <a href="index.php">HOME</a>
+      <hr>
+      <h4>About Us</h4>
+      <br>
 
-<!--====== ABOUT PART ENDS ======-->
-    <!--====== Bootstrap js ======-->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-</body>
+      <div class="row">
+          <div class="col">
+              <p>
+              E-commerce is gradually gaining traction as a viable business concept. Increasingly, organizations are creating websites that allow them to conduct business over the Internet. Online buying is gaining in popularity. From this e-commerce store where we can individuals purchase clothing, kitchenware, gym equipment, electronics, furniture, and other items from the convenience of their own homes over the Internet.
+              </p>
+              
+          </div>
+      </div>
+  </div>
+</body>  
 </html>

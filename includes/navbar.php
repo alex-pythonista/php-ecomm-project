@@ -39,14 +39,7 @@
             </ul>
           </li>
         </ul>
-        <form method="POST" class="navbar-form navbar-left" action="search.php">
-          <div class="input-group">
-              <input type="text" class="form-control" id="navbar-search-input" name="keyword" placeholder="Search for Product" required>
-              <span class="input-group-btn" id="searchBtn" style="display:none;">
-                  <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i> </button>
-              </span>
-          </div>
-        </form>
+        
       </div>
       <!-- /.navbar-collapse -->
       <!-- Navbar Right Menu -->
