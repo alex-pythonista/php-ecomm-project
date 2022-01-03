@@ -1,15 +1,6 @@
-/**
- * AdminLTE Demo Menu
- * ------------------
- * You should not use this file in production.
- * This file is for demo purposes only.
- */
+
 $(function () {
   'use strict'
-
-  /**
-   * Get access to plugins
-   */
 
   $('[data-toggle="control-sidebar"]').controlSidebar()
   $('[data-toggle="push-menu"]').pushMenu()
@@ -18,11 +9,6 @@ $(function () {
   var $controlSidebar = $('[data-toggle="control-sidebar"]').data('lte.controlsidebar')
   var $layout         = $('body').data('lte.layout')
 
-  /**
-   * List of all the available skins
-   *
-   * @type Array
-   */
   var mySkins = [
     'skin-blue',
     'skin-black',
@@ -38,12 +24,6 @@ $(function () {
     'skin-green-light'
   ]
 
-  /**
-   * Get a prestored setting
-   *
-   * @param String name Name of of the setting
-   * @returns String The value of the setting | null
-   */
   function get(name) {
     if (typeof (Storage) !== 'undefined') {
       return localStorage.getItem(name)
@@ -52,13 +32,7 @@ $(function () {
     }
   }
 
-  /**
-   * Store a new settings in the browser
-   *
-   * @param String name Name of the setting
-   * @param String val Value of the setting
-   * @returns void
-   */
+
   function store(name, val) {
     if (typeof (Storage) !== 'undefined') {
       localStorage.setItem(name, val)
@@ -67,12 +41,7 @@ $(function () {
     }
   }
 
-  /**
-   * Toggles layout classes
-   *
-   * @param String cls the layout class to toggle
-   * @returns void
-   */
+
   function changeLayout(cls) {
     $('body').toggleClass(cls)
     $layout.fixSidebar()
@@ -83,11 +52,6 @@ $(function () {
     $controlSidebar.fix()
   }
 
-  /**
-   * Replaces the old skin with the new skin
-   * @param String cls the new skin class
-   * @returns Boolean false to prevent link's default action
-   */
   function changeSkin(cls) {
     $.each(mySkins, function (i) {
       $('body').removeClass(mySkins[i])
@@ -98,17 +62,12 @@ $(function () {
     return false
   }
 
-  /**
-   * Retrieve default settings and apply them to the template
-   *
-   * @returns void
-   */
+ 
   function setup() {
     var tmp = get('skin')
     if (tmp && $.inArray(tmp, mySkins))
       changeSkin(tmp)
 
-    // Add the change skin listener
     $('[data-skin]').on('click', function (e) {
       if ($(this).hasClass('knob'))
         return
@@ -116,7 +75,7 @@ $(function () {
       changeSkin($(this).data('skin'))
     })
 
-    // Add the layout manager
+
     $('[data-layout]').on('click', function () {
       changeLayout($(this).data('layout'))
     })
@@ -148,7 +107,7 @@ $(function () {
         $('[data-layout="sidebar-collapse"]').click()
     })
 
-    //  Reset options
+    
     if ($('body').hasClass('fixed')) {
       $('[data-layout="fixed"]').attr('checked', 'checked')
     }
@@ -161,32 +120,31 @@ $(function () {
 
   }
 
-  // Create the new tab
+
   var $tabPane = $('<div />', {
     'id'   : 'control-sidebar-theme-demo-options-tab',
     'class': 'tab-pane active'
   })
 
-  // Create the tab button
+ 
   var $tabButton = $('<li />', { 'class': 'active' })
     .html('<a href=\'#control-sidebar-theme-demo-options-tab\' data-toggle=\'tab\'>'
       + '<i class="fa fa-wrench"></i>'
       + '</a>')
 
-  // Add the tab button to the right sidebar tabs
+ 
   $('[href="#control-sidebar-home-tab"]')
     .parent()
     .before($tabButton)
 
-  // Create the menu
+ 
   var $demoSettings = $('<div />')
 
-  // Layout options
+ 
   $demoSettings.append(
     '<h4 class="control-sidebar-heading">'
     + 'Layout Options'
     + '</h4>'
-    // Fixed layout
     + '<div class="form-group">'
     + '<label class="control-sidebar-subheading">'
     + '<input type="checkbox"data-layout="fixed"class="pull-right"/> '
@@ -194,7 +152,6 @@ $(function () {
     + '</label>'
     + '<p>Activate the fixed layout. You can\'t use fixed and boxed layouts together</p>'
     + '</div>'
-    // Boxed layout
     + '<div class="form-group">'
     + '<label class="control-sidebar-subheading">'
     + '<input type="checkbox"data-layout="layout-boxed" class="pull-right"/> '
@@ -202,7 +159,6 @@ $(function () {
     + '</label>'
     + '<p>Activate the boxed layout</p>'
     + '</div>'
-    // Sidebar Toggle
     + '<div class="form-group">'
     + '<label class="control-sidebar-subheading">'
     + '<input type="checkbox"data-layout="sidebar-collapse"class="pull-right"/> '
@@ -210,7 +166,6 @@ $(function () {
     + '</label>'
     + '<p>Toggle the left sidebar\'s state (open or collapse)</p>'
     + '</div>'
-    // Sidebar mini expand on hover toggle
     + '<div class="form-group">'
     + '<label class="control-sidebar-subheading">'
     + '<input type="checkbox"data-enable="expandOnHover"class="pull-right"/> '
@@ -218,7 +173,6 @@ $(function () {
     + '</label>'
     + '<p>Let the sidebar mini expand on hover</p>'
     + '</div>'
-    // Control Sidebar Toggle
     + '<div class="form-group">'
     + '<label class="control-sidebar-subheading">'
     + '<input type="checkbox"data-controlsidebar="control-sidebar-open"class="pull-right"/> '
@@ -226,7 +180,6 @@ $(function () {
     + '</label>'
     + '<p>Toggle between slide over content and push content effects</p>'
     + '</div>'
-    // Control Sidebar Skin Toggle
     + '<div class="form-group">'
     + '<label class="control-sidebar-subheading">'
     + '<input type="checkbox"data-sidebarskin="toggle"class="pull-right"/> '
@@ -237,7 +190,6 @@ $(function () {
   )
   var $skinsList = $('<ul />', { 'class': 'list-unstyled clearfix' })
 
-  // Dark sidebar skins
   var $skinBlue =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
           .append('<a href="javascript:void(0)" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'
@@ -287,7 +239,6 @@ $(function () {
             + '<p class="text-center no-margin">Yellow</p>')
   $skinsList.append($skinYellow)
 
-  // Light sidebar skins
   var $skinBlueLight =
         $('<li />', { style: 'float:left; width: 33.33333%; padding: 5px;' })
           .append('<a href="javascript:void(0)" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">'

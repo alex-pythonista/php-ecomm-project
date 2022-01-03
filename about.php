@@ -15,15 +15,16 @@
 
       <a href="index.php">HOME</a>
       <hr>
-      <h4>About Us</h4>
+      <h2><u>About Us</u></h2>
       <br>
 
       <div class="row">
           <div class="col">
               <p>
+                <h4>
               E-commerce is gradually gaining traction as a viable business concept. Increasingly, organizations are creating websites that allow them to conduct business over the Internet. Online buying is gaining in popularity. From this e-commerce store where we can individuals purchase clothing, kitchenware, gym equipment, electronics, furniture, and other items from the convenience of their own homes over the Internet.
-              </p>
-              
+                </h4>  
+            </p>
           </div>
       </div>
   </div>

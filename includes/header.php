@@ -19,6 +19,11 @@
       #navbar-search-input{ 
         width: 60px; 
       }
+      body{
+        height: 100vh;
+        background-color: aliceblue;
+      }
+      }
       #navbar-search-input:focus{ 
         width: 100px; 
       }
