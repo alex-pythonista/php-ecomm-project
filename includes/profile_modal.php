@@ -1,4 +1,3 @@
-<!-- Transaction History -->
 <div class="modal fade" id="transaction">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -33,8 +32,6 @@
         </div>
     </div>
 </div>
-
-<!-- Edit Profile -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">

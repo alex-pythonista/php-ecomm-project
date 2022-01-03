@@ -14,8 +14,6 @@
 	catch(PDOException $e){
 		echo "There is some problem in connection: " . $e->getMessage();
 	}
-
-	//page view
 	$now = date('Y-m-d');
 	if($product['date_view'] == $now){
 		$stmt = $conn->prepare("UPDATE products SET counter=counter+1 WHERE id=:id");
@@ -44,8 +42,6 @@
 	 
 	  <div class="content-wrapper">
 	    <div class="container">
-
-	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">

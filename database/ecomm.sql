@@ -3,21 +3,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `ecomm`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cart`
---
-
 CREATE TABLE IF NOT EXISTS `cart` (
 `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -25,21 +10,12 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `category`
---
-
 CREATE TABLE IF NOT EXISTS `category` (
 `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `cat_slug` varchar(150) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `category`
---
 
 INSERT INTO `category` (`id`, `name`, `cat_slug`) VALUES
 (1, 'Laptops', 'laptops'),
@@ -47,22 +23,12 @@ INSERT INTO `category` (`id`, `name`, `cat_slug`) VALUES
 (3, 'Tablets', 'tablets'),
 (4, 'Smart Phones', '');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `details`
---
-
 CREATE TABLE IF NOT EXISTS `details` (
 `id` int(11) NOT NULL,
   `sales_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `details`
---
 
 INSERT INTO `details` (`id`, `sales_id`, `product_id`, `quantity`) VALUES
 (14, 9, 11, 2),
@@ -73,11 +39,6 @@ INSERT INTO `details` (`id`, `sales_id`, `product_id`, `quantity`) VALUES
 (19, 10, 2, 4),
 (20, 10, 19, 5);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
 
 CREATE TABLE IF NOT EXISTS `products` (
 `id` int(11) NOT NULL,
@@ -91,9 +52,6 @@ CREATE TABLE IF NOT EXISTS `products` (
   `counter` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `products`
---
 
 INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `slug`, `price`, `photo`, `date_view`, `counter`) VALUES
 (1, 1, 'DELL Inspiron 15 7000 15.6', '<p>15-inch laptop ideal for gamers. Featuring the latest Intel&reg; processors for superior gaming performance, and life-like NVIDIA&reg; GeForce&reg; graphics and an advanced thermal cooling design.</p>\r\n', 'dell-inspiron-15-7000-15-6', 899, 'dell-inspiron-15-7000-15-6.jpg', '2018-07-09', 2),
@@ -120,11 +78,6 @@ INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `slug`, `pri
 (28, 4, 'Samsung Note 8', '<p>See the bigger picture and communicate in a whole new way. With the Galaxy Note8 in your hand, bigger things are just waiting to happen.&nbsp;</p>\r\n\r\n<h3>The Infinity Display that&#39;s larger than life.&nbsp;</h3>\r\n\r\n<p>More screen means more space to do great things. Go big with the Galaxy Note8&#39;s 6.3&quot; screen. It&#39;s the largest ever screen on a Note device and it still fits easily in your hand.</p>\r\n\r\n<p>*Infinity Display: a near bezel-less, full-frontal glass, edge-to-edge screen.</p>\r\n\r\n<p>*Screen measured diagonally as a full rectangle without accounting for the rounded corners.</p>\r\n\r\n<p>Use the S Pen to express yourself in ways that make a difference. Draw your own emojis to show how you feel or write a message on a photo and send it as a handwritten note. Do things that matter with the S Pen.</p>\r\n\r\n<p>*Image simulated for illustration purpose only.</p>\r\n', 'samsung-note-8', 829, 'samsung-note-8.jpg', '0000-00-00', 0),
 (29, 4, 'Samsung Galaxy S9+ [128 GB]', '<h2>The revolutionary camera that adapts like the human eye.&nbsp;</h2>\r\n\r\n<h3>Capture stunning pictures in bright daylight and super low light.</h3>\r\n\r\n<p>Our category-defining Dual Aperture lens adapts like the human eye. It&#39;s able to automatically switch between various lighting conditions with ease&mdash;making your photos look great whether it&#39;s bright or dark, day or night.</p>\r\n\r\n<p>*Dual Aperture supports F1.5 and F2.4 modes. Installed on the rear camera (Galaxy S9)/rear wide camera (Galaxy S9+).</p>\r\n\r\n<p><img alt="" src="https://www.samsung.com/global/galaxy/galaxy-s9/images/galaxy-s9_slow_gif_visual_l.jpg" style="height:464px; width:942px" />Add music. Make GIFs. Get likes</p>\r\n\r\n<p>Super Slow-mo lets you see the things you could have missed in the blink of an eye. Set the video to music or turn it into a looping GIF, and share it with a tap. Then sit back and watch the reactions roll in.</p>\r\n', 'samsung-galaxy-s9-128-gb', 889.99, 'samsung-galaxy-s9-128-gb.jpg', '2018-07-09', 3);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `sales`
---
 
 CREATE TABLE IF NOT EXISTS `sales` (
 `id` int(11) NOT NULL,
@@ -133,19 +86,10 @@ CREATE TABLE IF NOT EXISTS `sales` (
   `sales_date` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `sales`
---
-
 INSERT INTO `sales` (`id`, `user_id`, `pay_id`, `sales_date`) VALUES
 (9, 9, 'PAY-1RT494832H294925RLLZ7TZA', '2018-05-10'),
 (10, 9, 'PAY-21700797GV667562HLLZ7ZVY', '2018-05-10');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
 
 CREATE TABLE IF NOT EXISTS `users` (
 `id` int(11) NOT NULL,
@@ -163,89 +107,43 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_on` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `users`
---
-
 INSERT INTO `users` (`id`, `email`, `password`, `type`, `firstname`, `lastname`, `address`, `contact_info`, `photo`, `status`, `activate_code`, `reset_code`, `created_on`) VALUES
 (1, 'admin@admin.com', '$2y$10$0SHFfoWzz8WZpdu9Qw//E.tWamILbiNCX7bqhy3od0gvK5.kSJ8N2', 1, 'Code', 'Projects', '', '', 'thanos1.jpg', 1, '', '', '2018-05-01'),
 (9, 'harry@den.com', '$2y$10$Oongyx.Rv0Y/vbHGOxywl.qf18bXFiZOcEaI4ZpRRLzFNGKAhObSC', 0, 'Harry', 'Den', 'Silay City, Negros Occidental', '09092735719', 'male2.png', 1, 'k8FBpynQfqsv', 'wzPGkX5IODlTYHg', '2018-05-09'),
 (12, 'christine@gmail.com', '$2y$10$ozW4c8r313YiBsf7HD7m6egZwpvoE983IHfZsPRxrO1hWXfPRpxHO', 0, 'Christine', 'becker', 'demo', '7542214500', 'female3.jpg', 1, '', '', '2018-07-09');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cart`
---
 ALTER TABLE `cart`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `category`
---
 ALTER TABLE `category`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `details`
---
 ALTER TABLE `details`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `products`
---
 ALTER TABLE `products`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `sales`
---
 ALTER TABLE `sales`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `users`
---
 ALTER TABLE `users`
  ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cart`
---
 ALTER TABLE `cart`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `category`
---
+
 ALTER TABLE `category`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `details`
---
+
 ALTER TABLE `details`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT for table `products`
---
+
 ALTER TABLE `products`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
---
--- AUTO_INCREMENT for table `sales`
---
+
 ALTER TABLE `sales`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `users`
---
+
 ALTER TABLE `users`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

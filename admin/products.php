@@ -14,9 +14,7 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Product List
@@ -28,7 +26,6 @@
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -141,7 +138,6 @@
     <?php include 'includes/products_modal2.php'; ?>
 
 </div>
-<!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
 <script>

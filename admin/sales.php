@@ -6,9 +6,7 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Sales History
@@ -19,7 +17,6 @@
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
@@ -108,16 +105,13 @@ $(function(){
     format: 'yyyy-mm-dd'
   })
 
-  //Timepicker
+
   $('.timepicker').timepicker({
     showInputs: false
   })
 
-  //Date range picker
   $('#reservation').daterangepicker()
-  //Date range picker with time picker
   $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-  //Date range as a button
   $('#daterange-btn').daterangepicker(
     {
       ranges   : {

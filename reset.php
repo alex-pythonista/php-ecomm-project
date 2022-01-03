@@ -14,7 +14,6 @@
 		$row = $stmt->fetch();
 
 		if($row['numrows'] > 0){
-			//generate code
 			$set='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 			$code=substr(str_shuffle($set), 0, 15);
 			try{
@@ -28,13 +27,10 @@
 					<p>Please click the link below to reset your password.</p>
 					<a href='http://localhost/ecommerce/password_reset.php?code=".$code."&user=".$row['id']."'>Reset Password</a>
 				";
-
-				//Load phpmailer
 	    		require 'vendor/autoload.php';
 
 	    		$mail = new PHPMailer(true);                             
 			    try {
-			        //Server settings
 			        $mail->isSMTP();                                     
 			        $mail->Host = 'smtp.gmail.com';                      
 			        $mail->SMTPAuth = true;                               
@@ -51,12 +47,10 @@
 			        $mail->Port = 465;                                   
 
 			        $mail->setFrom('testsourcecodester@gmail.com');
-			        
-			        //Recipients
+
 			        $mail->addAddress($email);              
 			        $mail->addReplyTo('testsourcecodester@gmail.com');
-			       
-			        //Content
+
 			        $mail->isHTML(true);                                  
 			        $mail->Subject = 'ECommerce Site Password Reset';
 			        $mail->Body    = $message;

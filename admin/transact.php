@@ -25,7 +25,6 @@
 			</tr>
 		";
 	}
-	
 	$output['total'] = '<b>&#36; '.number_format($total, 2).'<b>';
 	$pdo->close();
 	echo json_encode($output);

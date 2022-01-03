@@ -8,7 +8,6 @@
         </button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="index.php">HOME</a></li>
@@ -41,12 +40,10 @@
         </ul>
         
       </div>
-      <!-- /.navbar-collapse -->
-      <!-- Navbar Right Menu -->
+    
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-shopping-cart"></i>
               <span class="label label-success cart_count"></span>

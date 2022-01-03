@@ -15,22 +15,6 @@
 		$_SESSION['lastname'] = $lastname;
 		$_SESSION['email'] = $email;
 
-		// if(!isset($_SESSION['captcha'])){
-		// 	require('recaptcha/src/autoload.php');		
-		// 	$recaptcha = new \ReCaptcha\ReCaptcha('6LevO1IUAAAAAFCCiOHERRXjh3VrHa5oywciMKcw', new \ReCaptcha\RequestMethod\SocketPost());
-		// 	$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
-
-		// 	if (!$resp->isSuccess()){
-		//   		$_SESSION['error'] = 'Please answer recaptcha correctly';
-		//   		header('location: signup.php');	
-		//   		exit();	
-		//   	}	
-		//   	else{
-		//   		$_SESSION['captcha'] = time() + (10*60);
-		//   	}
-
-		// }
-
 		if($password != $repassword){
 			$_SESSION['error'] = 'Passwords did not match';
 			header('location: signup.php');
@@ -49,7 +33,6 @@
 				$now = date('Y-m-d');
 				$password = password_hash($password, PASSWORD_DEFAULT);
 
-				//generate code
 				$set='123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 				$code=substr(str_shuffle($set), 0, 12);
 
@@ -67,12 +50,10 @@
 						<a href='http://localhost/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
 					";
 
-					//Load phpmailer
 		    		require 'vendor/autoload.php';
 
 		    		$mail = new PHPMailer(true);                             
 				    try {
-				        //Server settings
 				        $mail->isSMTP();                                     
 				        $mail->Host = 'smtp.gmail.com';                      
 				        $mail->SMTPAuth = true;                               
@@ -89,12 +70,10 @@
 				        $mail->Port = 587;                                   
 
 				        $mail->setFrom('191006712@eastdelta.edu.bd');
-				        
-				        //Recipients
+
 				        $mail->addAddress($email);              
 				        $mail->addReplyTo('191006712@eastdelta.edu.bd');
 				       
-				        //Content
 				        $mail->isHTML(true);                                  
 				        $mail->Subject = 'ECommerce Site Sign Up';
 				        $mail->Body    = $message;

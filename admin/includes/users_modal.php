@@ -1,4 +1,3 @@
-<!-- Add -->
 <div class="modal fade" id="addnew">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -68,7 +67,6 @@
     </div>
 </div>
 
-<!-- Edit -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -132,7 +130,6 @@
     </div>
 </div>
 
-<!-- Delete -->
 <div class="modal fade" id="delete">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -158,7 +155,6 @@
     </div>
 </div>
 
-<!-- Update Photo -->
 <div class="modal fade" id="edit_photo">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -187,8 +183,6 @@
     </div>
 </div> 
 
-
-<!-- Activate -->
 <div class="modal fade" id="activate">
     <div class="modal-dialog">
         <div class="modal-content">
